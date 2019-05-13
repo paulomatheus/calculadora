@@ -14,6 +14,8 @@ public class HomeScreen extends javax.swing.JFrame {
     /**
      * Creates new form HomeScreen
      */
+    String resposta = "";
+    
     public HomeScreen() {
         this.setResizable(false);
         this.setTitle("Calculadora Hexadecimal");
@@ -66,7 +68,6 @@ public class HomeScreen extends javax.swing.JFrame {
         pnVisor.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Visor", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
 
         tfConta.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        tfConta.setText("1234");
         tfConta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfContaActionPerformed(evt);
@@ -74,7 +75,6 @@ public class HomeScreen extends javax.swing.JFrame {
         });
 
         tfResultado.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        tfResultado.setText("1234");
 
         lbIgual.setForeground(new java.awt.Color(255, 255, 255));
         lbIgual.setText("      =");
@@ -97,10 +97,9 @@ public class HomeScreen extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnVisorLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnVisorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(pnVisorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(tfConta, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
-                        .addComponent(lbIgual, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(tfResultado, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(lbIgual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tfConta, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfResultado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -108,12 +107,32 @@ public class HomeScreen extends javax.swing.JFrame {
         pnBotoes.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Botões", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
 
         btZero.setText("0");
+        btZero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btZeroActionPerformed(evt);
+            }
+        });
 
         btUm.setText("1");
+        btUm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btUmActionPerformed(evt);
+            }
+        });
 
         btDois.setText("2");
+        btDois.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btDoisActionPerformed(evt);
+            }
+        });
 
         btTres.setText("3");
+        btTres.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btTresActionPerformed(evt);
+            }
+        });
 
         btQuatro.setText("4");
         btQuatro.addActionListener(new java.awt.event.ActionListener() {
@@ -123,14 +142,39 @@ public class HomeScreen extends javax.swing.JFrame {
         });
 
         btCinco.setText("5");
+        btCinco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCincoActionPerformed(evt);
+            }
+        });
 
         btSeis.setText("6");
+        btSeis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSeisActionPerformed(evt);
+            }
+        });
 
         btSete.setText("7");
+        btSete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSeteActionPerformed(evt);
+            }
+        });
 
         btOito.setText("8");
+        btOito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btOitoActionPerformed(evt);
+            }
+        });
 
         btNove.setText("9");
+        btNove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btNoveActionPerformed(evt);
+            }
+        });
 
         btLetraA.setText("A");
         btLetraA.addActionListener(new java.awt.event.ActionListener() {
@@ -140,14 +184,39 @@ public class HomeScreen extends javax.swing.JFrame {
         });
 
         btLetraB.setText("B");
+        btLetraB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btLetraBActionPerformed(evt);
+            }
+        });
 
         btLetraC.setText("C");
+        btLetraC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btLetraCActionPerformed(evt);
+            }
+        });
 
         btLetraD.setText("D");
+        btLetraD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btLetraDActionPerformed(evt);
+            }
+        });
 
         btLetraE.setText("E");
+        btLetraE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btLetraEActionPerformed(evt);
+            }
+        });
 
         btLetraF.setText("F");
+        btLetraF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btLetraFActionPerformed(evt);
+            }
+        });
 
         btApagar.setText("Apagar");
         btApagar.addActionListener(new java.awt.event.ActionListener() {
@@ -157,14 +226,39 @@ public class HomeScreen extends javax.swing.JFrame {
         });
 
         btApagarTudo.setText("Apagar tudo");
+        btApagarTudo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btApagarTudoActionPerformed(evt);
+            }
+        });
 
         btAdicao.setText("+");
+        btAdicao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAdicaoActionPerformed(evt);
+            }
+        });
 
         btSubtracao.setText("-");
+        btSubtracao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSubtracaoActionPerformed(evt);
+            }
+        });
 
         btMultiplicacao.setText("*");
+        btMultiplicacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btMultiplicacaoActionPerformed(evt);
+            }
+        });
 
         btDivisao.setText("/");
+        btDivisao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btDivisaoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnBotoesLayout = new javax.swing.GroupLayout(pnBotoes);
         pnBotoes.setLayout(pnBotoesLayout);
@@ -225,28 +319,34 @@ public class HomeScreen extends javax.swing.JFrame {
             pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnBotoesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(pnBotoesLayout.createSequentialGroup()
-                        .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btZero, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btUm, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btDois, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btTres, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btApagarTudo, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(btDois, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btTres, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btApagarTudo, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btUm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btZero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btQuatro, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btCinco, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btSeis, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btSete, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btSubtracao, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btOito, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btNove, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btLetraA, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btLetraB, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btDivisao, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnBotoesLayout.createSequentialGroup()
+                                .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(btSeis, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btSete, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(btCinco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btQuatro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(pnBotoesLayout.createSequentialGroup()
+                                .addComponent(btSubtracao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(6, 6, 6)))
+                        .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btDivisao, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btNove, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btOito, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btLetraA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btLetraB, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(pnBotoesLayout.createSequentialGroup()
                         .addComponent(btApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -254,12 +354,13 @@ public class HomeScreen extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btMultiplicacao, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btLetraC, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btLetraD, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btLetraE, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btLetraF, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btLetraE, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btLetraF, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btLetraD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btLetraC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -287,20 +388,151 @@ public class HomeScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btQuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btQuatroActionPerformed
-        // TODO add your handling code here:
+        String quatro = "4";
+        resposta += quatro;
+        tfConta.setText(resposta);
+        int hexadecimal = Integer.parseInt(resposta);
+        String hexa = Integer.toHexString(hexadecimal);
+        tfResultado.setText(hexa);
     }//GEN-LAST:event_btQuatroActionPerformed
 
     private void btLetraAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLetraAActionPerformed
-        // TODO add your handling code here:
+        String a = "";
+        resposta += a;
+        tfConta.setText(resposta);
+        int hexadecimal = Integer.parseInt(resposta);
+        String hexa = Integer.toHexString(hexadecimal);
+        tfResultado.setText(hexa);
     }//GEN-LAST:event_btLetraAActionPerformed
 
     private void btApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagarActionPerformed
-        // TODO add your handling code here:
+
+       // resposta.charAt(resposta.length()) = "";
+                
+        
+        tfConta.setText(resposta);
+        
     }//GEN-LAST:event_btApagarActionPerformed
 
     private void tfContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfContaActionPerformed
-        // TODO add your handling code here:
+        
+        
+        
     }//GEN-LAST:event_tfContaActionPerformed
+
+    private void btZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btZeroActionPerformed
+        String zero = "0";
+        resposta += zero;
+        tfConta.setText(resposta);
+    }//GEN-LAST:event_btZeroActionPerformed
+
+    private void btUmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUmActionPerformed
+        String um = "1";
+        resposta += um;
+        tfConta.setText(resposta);
+    }//GEN-LAST:event_btUmActionPerformed
+
+    private void btDoisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDoisActionPerformed
+        String dois = "2";
+        resposta += dois;
+        tfConta.setText(resposta);
+    }//GEN-LAST:event_btDoisActionPerformed
+
+    private void btTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTresActionPerformed
+        String tres = "3";
+        resposta += tres;
+        tfConta.setText(resposta);
+    }//GEN-LAST:event_btTresActionPerformed
+
+    private void btCincoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCincoActionPerformed
+        String cinco = "5";
+        resposta += cinco;
+        tfConta.setText(resposta);
+    }//GEN-LAST:event_btCincoActionPerformed
+
+    private void btSeisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSeisActionPerformed
+        String seis = "6";
+        resposta += seis;
+        tfConta.setText(resposta);
+    }//GEN-LAST:event_btSeisActionPerformed
+
+    private void btSeteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSeteActionPerformed
+        String sete = "7";
+        resposta += sete;
+        tfConta.setText(resposta);
+    }//GEN-LAST:event_btSeteActionPerformed
+
+    private void btOitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btOitoActionPerformed
+        String oito = "8";
+        resposta += oito;
+        tfConta.setText(resposta);
+    }//GEN-LAST:event_btOitoActionPerformed
+
+    private void btNoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNoveActionPerformed
+        String nove = "9";
+        resposta += nove;
+        tfConta.setText(resposta);
+    }//GEN-LAST:event_btNoveActionPerformed
+
+    private void btLetraBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLetraBActionPerformed
+        String b = "B";
+        resposta += b;
+        tfConta.setText(resposta);
+    }//GEN-LAST:event_btLetraBActionPerformed
+
+    private void btLetraCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLetraCActionPerformed
+        String c = "C";
+        resposta += c;
+        tfConta.setText(resposta);
+    }//GEN-LAST:event_btLetraCActionPerformed
+
+    private void btLetraDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLetraDActionPerformed
+        String d = "D";
+        resposta += d;
+        tfConta.setText(resposta);
+    }//GEN-LAST:event_btLetraDActionPerformed
+
+    private void btLetraEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLetraEActionPerformed
+        String e = "E";
+        resposta += e;
+        tfConta.setText(resposta);
+    }//GEN-LAST:event_btLetraEActionPerformed
+
+    private void btLetraFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLetraFActionPerformed
+        String f = "F";
+        resposta += f;
+        tfConta.setText(resposta);
+    }//GEN-LAST:event_btLetraFActionPerformed
+
+    private void btApagarTudoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagarTudoActionPerformed
+        resposta = "";
+        tfConta.setText(resposta);
+        tfResultado.setText(resposta);
+    }//GEN-LAST:event_btApagarTudoActionPerformed
+
+    private void btAdicaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAdicaoActionPerformed
+        String mais = "+";
+        resposta += mais;
+        tfConta.setText(resposta);
+    }//GEN-LAST:event_btAdicaoActionPerformed
+
+    private void btSubtracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSubtracaoActionPerformed
+        String menos = "-";
+        resposta += menos;
+        tfConta.setText(resposta);
+    }//GEN-LAST:event_btSubtracaoActionPerformed
+
+    private void btMultiplicacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMultiplicacaoActionPerformed
+        String multiplicacao = "*";
+        resposta += multiplicacao;
+        tfConta.setText(resposta);
+    }//GEN-LAST:event_btMultiplicacaoActionPerformed
+
+    private void btDivisaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDivisaoActionPerformed
+        String divisao = "/";
+        resposta += divisao;
+        tfConta.setText(resposta);
+    }//GEN-LAST:event_btDivisaoActionPerformed
 
     /**
      * @param args the command line arguments
