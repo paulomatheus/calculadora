@@ -10,11 +10,21 @@ package calculadorahexadecimal;
  * @author paulomatheusdearaujosilva
  */
 public class Operacoes {
-    public void adicao(int a, int b){
-        
+    int auxiliar = 0;
+    
+    public int adicao(int a){
+       
+        System.out.println("A da classe= "+ a);
+        auxiliar += a;
+        System.out.println("Auxiliar da classe [+] =" +auxiliar);
+        return auxiliar;   
     }
     
-    public void subtracao (int a, int b){
+    public int subtracao (int b){
+        System.out.println("B da classe= "+ b);
+        auxiliar = auxiliar - b;
+        System.out.println("Auxiliar da classe [-] =" +auxiliar);
+        return auxiliar;
         
     }
     

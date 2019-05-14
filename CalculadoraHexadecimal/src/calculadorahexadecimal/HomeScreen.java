@@ -17,10 +17,16 @@ public class HomeScreen extends javax.swing.JFrame {
     /**
      * Creates new form HomeScreen
      */
-    String resposta = "";
+    Operacoes opera = new Operacoes();
+    String letraEquacao = "";
+    String numeroEquacao = "";
     String letraHexa = "";
     int numeroHexa = 0;
-    //List<String> resposta = new ArrayList();
+    int aux = 0;
+    boolean inicio = true;
+    boolean operacao = false;
+    
+    //List<String> letraEquacao = new ArrayList();
     
     public HomeScreen() {
         this.setResizable(false);
@@ -315,7 +321,7 @@ public class HomeScreen extends javax.swing.JFrame {
                         .addComponent(btApagarTudo, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(pnBotoesLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btSubtracao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btDivisao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -394,32 +400,53 @@ public class HomeScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btQuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btQuatroActionPerformed
-        String quatro = "4";
-        resposta += quatro;
-        numeroHexa = Integer.parseInt(resposta, 16);
-        letraHexa = Integer.toHexString(numeroHexa);
-        tfConta.setText(resposta);
-        tfResultado.setText(letraHexa);
+        //Condicao para iniciar a calculadora
+        if (inicio) {
+            //fazer em tudo
+            letraEquacao += "4";
+            numeroEquacao += "4" ;
+            numeroHexa = Integer.parseInt(letraEquacao, 16);
+            System.out.println("NumHexa do inicio =" + numeroHexa);
+            letraHexa = Integer.toHexString(numeroHexa);
+            tfConta.setText(letraEquacao);
+            tfResultado.setText(letraHexa);
+        } else {
+            //Condicao para ver se a operacao eh de adicao ou subtracao
+            if (operacao) {
+                System.out.println("NumHexa de adicao = " + numeroHexa);
+                //opera.adicao(numeroHexa);
+                System.out.println("Retorno de adicao = " + opera.adicao(numeroHexa));
+                System.out.println("-----------------------");
+                
+                
+            } else {
+                System.out.println("NumHexa de subtracao= " + numeroHexa);
+                //opera.subtracao(numeroHexa);
+                System.out.println("Retorno de subtracao = " + opera.subtracao(numeroHexa));
+                System.out.println("------------------------");
+            }
+        }
+        
     }//GEN-LAST:event_btQuatroActionPerformed
 
     private void btLetraAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLetraAActionPerformed
         String a = "A";
-        resposta += a;
-        numeroHexa = Integer.parseInt(resposta, 16);
+        letraEquacao += a;
+        numeroHexa = Integer.parseInt(letraEquacao, 16);
         letraHexa = Integer.toHexString(numeroHexa);
-        tfConta.setText(resposta);
+        tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btLetraAActionPerformed
 
     private void btApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagarActionPerformed
         try{
-            resposta = resposta.substring(0, resposta.length()-1);
+            letraEquacao = letraEquacao.substring(0, letraEquacao.length()-1);
             letraHexa = letraHexa.substring(0, letraHexa.length()-1);
-            System.out.println(resposta);
-            tfConta.setText(resposta);
+            System.out.println(letraEquacao);
+            tfConta.setText(letraEquacao);
             tfResultado.setText(letraHexa);
         }catch(StringIndexOutOfBoundsException erro){
-            
+            System.out.println(erro);
         }
         
     }//GEN-LAST:event_btApagarActionPerformed
@@ -432,164 +459,174 @@ public class HomeScreen extends javax.swing.JFrame {
 
     private void btZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btZeroActionPerformed
         String zero = "0";
-        resposta += zero;
-        numeroHexa = Integer.parseInt(resposta, 16);
+        letraEquacao += zero;
+        numeroHexa = Integer.parseInt(letraEquacao, 16);
         letraHexa = Integer.toHexString(numeroHexa);
-        tfConta.setText(resposta);
+        tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btZeroActionPerformed
 
     private void btUmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUmActionPerformed
         String um = "1";
-        resposta += um;
-        numeroHexa = Integer.parseInt(resposta, 16);
+        letraEquacao += um;
+        numeroHexa = Integer.parseInt(letraEquacao, 16);
         letraHexa = Integer.toHexString(numeroHexa);
-        tfConta.setText(resposta);
+        tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btUmActionPerformed
 
     private void btDoisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDoisActionPerformed
         String dois = "2";
-        resposta += dois;
-        numeroHexa = Integer.parseInt(resposta, 16);
+        letraEquacao += dois;
+        numeroHexa = Integer.parseInt(letraEquacao, 16);
         letraHexa = Integer.toHexString(numeroHexa);
-        tfConta.setText(resposta);
+        tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btDoisActionPerformed
 
     private void btTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTresActionPerformed
         String tres = "3";
-        resposta += tres;
-        numeroHexa = Integer.parseInt(resposta, 16);
+        letraEquacao += tres;
+        numeroHexa = Integer.parseInt(letraEquacao, 16);
         letraHexa = Integer.toHexString(numeroHexa);
-        tfConta.setText(resposta);
+        tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btTresActionPerformed
 
     private void btCincoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCincoActionPerformed
         String cinco = "5";
-        resposta += cinco;
-        numeroHexa = Integer.parseInt(resposta, 16);
+        letraEquacao += cinco;
+        numeroHexa = Integer.parseInt(letraEquacao, 16);
         letraHexa = Integer.toHexString(numeroHexa);
-        tfConta.setText(resposta);
+        tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btCincoActionPerformed
 
     private void btSeisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSeisActionPerformed
         String seis = "6";
-        resposta += seis;
-        numeroHexa = Integer.parseInt(resposta, 16);
+        letraEquacao += seis;
+        numeroHexa = Integer.parseInt(letraEquacao, 16);
         letraHexa = Integer.toHexString(numeroHexa);
-        tfConta.setText(resposta);
+        tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btSeisActionPerformed
 
     private void btSeteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSeteActionPerformed
         String sete = "7";
-        resposta += sete;
-        numeroHexa = Integer.parseInt(resposta, 16);
+        letraEquacao += sete;
+        numeroHexa = Integer.parseInt(letraEquacao, 16);
         letraHexa = Integer.toHexString(numeroHexa);
-        tfConta.setText(resposta);
+        tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btSeteActionPerformed
 
     private void btOitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btOitoActionPerformed
         String oito = "8";
-        resposta += oito;
-        numeroHexa = Integer.parseInt(resposta, 16);
+        letraEquacao += oito;
+        numeroHexa = Integer.parseInt(letraEquacao, 16);
         letraHexa = Integer.toHexString(numeroHexa);
-        tfConta.setText(resposta);
+        tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btOitoActionPerformed
 
     private void btNoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNoveActionPerformed
         String nove = "9";
         int vc = 9;
-        resposta += nove;
-        numeroHexa = Integer.parseInt(resposta, 16);
+        letraEquacao += nove;
+        numeroHexa = Integer.parseInt(letraEquacao, 16);
         letraHexa = Integer.toHexString(numeroHexa);
-        tfConta.setText(resposta);
+        tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btNoveActionPerformed
 
     private void btLetraBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLetraBActionPerformed
         String b = "B";
-        resposta += b;
-        numeroHexa = Integer.parseInt(resposta, 16);
+        letraEquacao += b;
+        numeroHexa = Integer.parseInt(letraEquacao, 16);
         letraHexa = Integer.toHexString(numeroHexa);
-        tfConta.setText(resposta);
+        tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btLetraBActionPerformed
 
     private void btLetraCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLetraCActionPerformed
         String c = "C";
-        resposta += c;
-        numeroHexa = Integer.parseInt(resposta, 16);
+        letraEquacao += c;
+        numeroHexa = Integer.parseInt(letraEquacao, 16);
         System.out.println(numeroHexa);
         letraHexa = Integer.toHexString(numeroHexa);
         System.out.println(letraHexa);
-        tfConta.setText(resposta);
+        tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btLetraCActionPerformed
 
     private void btLetraDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLetraDActionPerformed
         String d = "D";
-        resposta += d;
-        numeroHexa = Integer.parseInt(resposta, 16);
+        letraEquacao += d;
+        numeroHexa = Integer.parseInt(letraEquacao, 16);
         letraHexa = Integer.toHexString(numeroHexa);
-        tfConta.setText(resposta);
+        tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btLetraDActionPerformed
 
     private void btLetraEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLetraEActionPerformed
         String e = "E";
-        resposta += e;
-        numeroHexa = Integer.parseInt(resposta, 16);
+        letraEquacao += e;
+        numeroHexa = Integer.parseInt(letraEquacao, 16);
         letraHexa = Integer.toHexString(numeroHexa);
-        tfConta.setText(resposta);
+        tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btLetraEActionPerformed
 
     private void btLetraFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLetraFActionPerformed
         String f = "F";
-        resposta += f;
-        numeroHexa = Integer.parseInt(resposta, 16);
+        letraEquacao += f;
+        numeroHexa = Integer.parseInt(letraEquacao, 16);
+        System.out.println(numeroHexa);
         letraHexa = Integer.toHexString(numeroHexa);
-        tfConta.setText(resposta);
+        tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btLetraFActionPerformed
 
     private void btApagarTudoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagarTudoActionPerformed
-        resposta = "";
+        inicio = true;
+        operacao = true;
+        letraEquacao = "";
         letraHexa = "";
         numeroHexa = 0;
         //valor
-        tfConta.setText(resposta);
+        tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btApagarTudoActionPerformed
 
     private void btAdicaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAdicaoActionPerformed
+        inicio = false;
+        operacao = true;
+        System.out.println("-----------" +operacao+ "----------------");
         String mais = "+";
-        resposta += mais;
-        tfConta.setText(resposta);
+        letraEquacao += mais;
+        tfConta.setText(letraEquacao);
+        
     }//GEN-LAST:event_btAdicaoActionPerformed
 
     private void btSubtracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSubtracaoActionPerformed
+        inicio = false;
+        operacao = false;
+        System.out.println("-----------" +operacao+ "----------------");
         String menos = "-";
-        resposta += menos;
-        tfConta.setText(resposta);
+        letraEquacao += menos;
+        tfConta.setText(letraEquacao);
     }//GEN-LAST:event_btSubtracaoActionPerformed
 
     private void btMultiplicacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMultiplicacaoActionPerformed
         String multiplicacao = "*";
-        resposta += multiplicacao;
-        tfConta.setText(resposta);
+        letraEquacao += multiplicacao;
+        tfConta.setText(letraEquacao);
     }//GEN-LAST:event_btMultiplicacaoActionPerformed
 
     private void btDivisaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDivisaoActionPerformed
         String divisao = "/";
-        resposta += divisao;
-        tfConta.setText(resposta);
+        letraEquacao += divisao;
+        tfConta.setText(letraEquacao);
     }//GEN-LAST:event_btDivisaoActionPerformed
 
     /**
