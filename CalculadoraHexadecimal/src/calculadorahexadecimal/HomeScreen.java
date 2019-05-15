@@ -411,12 +411,13 @@ public class HomeScreen extends javax.swing.JFrame {
             boolean auxOperacao = false;
             auxOperacao = operacao;
             //Apaga o ultimo valor inserido
-            operacao = false;letraHexa = Integer.toHexString(valida.condicao(inicio, operacao,numeroHexa));
+            operacao = false;
+            letraHexa = Integer.toHexString(valida.condicao(inicio, operacao,numeroHexa));
             numeroHexa = Integer.parseInt(letraHexa, 16);
             operacao = auxOperacao;
             //Envio para as telas as respostas
             tfConta.setText(letraEquacao);
-            tfResultado.setText(letraEquacao);
+            tfResultado.setText(letraHexa);
         }catch(StringIndexOutOfBoundsException erro){
             //Tratamento para nao subtrair a posicao 0
             System.out.println(erro);
