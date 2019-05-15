@@ -7,6 +7,7 @@ package calculadorahexadecimal;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JTextField;
 
 /**
  *
@@ -17,7 +18,9 @@ public class HomeScreen extends javax.swing.JFrame {
     /**
      * Creates new form HomeScreen
      */
+    
     Operacoes opera = new Operacoes();
+    Validacao valida = new Validacao();
     String letraEquacao = "";
     String numeroEquacao = "";
     String letraHexa = "";
@@ -29,6 +32,7 @@ public class HomeScreen extends javax.swing.JFrame {
     //List<String> letraEquacao = new ArrayList();
     
     public HomeScreen() {
+        System.out.println("etapa 4");
         this.setResizable(false);
         this.setTitle("Calculadora Hexadecimal");
         initComponents();
@@ -400,32 +404,17 @@ public class HomeScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btQuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btQuatroActionPerformed
-        //Condicao para iniciar a calculadora
-        if (inicio) {
-            //fazer em tudo
-            letraEquacao += "4";
-            numeroEquacao += "4" ;
-            numeroHexa = Integer.parseInt(letraEquacao, 16);
-            System.out.println("NumHexa do inicio =" + numeroHexa);
-            letraHexa = Integer.toHexString(numeroHexa);
-            tfConta.setText(letraEquacao);
-            tfResultado.setText(letraHexa);
-        } else {
-            //Condicao para ver se a operacao eh de adicao ou subtracao
-            if (operacao) {
-                System.out.println("NumHexa de adicao = " + numeroHexa);
-                //opera.adicao(numeroHexa);
-                System.out.println("Retorno de adicao = " + opera.adicao(numeroHexa));
-                System.out.println("-----------------------");
-                
-                
-            } else {
-                System.out.println("NumHexa de subtracao= " + numeroHexa);
-                //opera.subtracao(numeroHexa);
-                System.out.println("Retorno de subtracao = " + opera.subtracao(numeroHexa));
-                System.out.println("------------------------");
-            }
-        }
+        letraEquacao += "4";
+        numeroEquacao += "4" ;
+        numeroHexa = Integer.parseInt(numeroEquacao, 16);
+        System.out.println("NumHexa = "+ numeroHexa);
+        letraHexa = Integer.toHexString(valida.condicao(inicio, operacao,numeroHexa));
+       
+        System.out.println("Resposta em hexa = " + letraHexa);
+        numeroEquacao = "0";
+        tfConta.setText(letraEquacao);
+        tfResultado.setText(letraHexa);
+        
         
     }//GEN-LAST:event_btQuatroActionPerformed
 
@@ -452,10 +441,26 @@ public class HomeScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_btApagarActionPerformed
 
     private void tfContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfContaActionPerformed
-        
+       
         
         
     }//GEN-LAST:event_tfContaActionPerformed
+
+    public JTextField getTfConta() {
+        return tfConta;
+    }
+
+    public void setTfConta(JTextField tfConta) {
+        this.tfConta = tfConta;
+    }
+
+    public JTextField getTfResultado() {
+        return tfResultado;
+    }
+
+    public void setTfResultado(JTextField tfResultado) {
+        this.tfResultado = tfResultado;
+    }
 
     private void btZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btZeroActionPerformed
         String zero = "0";

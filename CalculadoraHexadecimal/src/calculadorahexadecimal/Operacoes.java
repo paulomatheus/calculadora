@@ -9,8 +9,8 @@ package calculadorahexadecimal;
  *
  * @author paulomatheusdearaujosilva
  */
-public class Operacoes {
-    int auxiliar = 0;
+public class Operacoes{
+    int auxiliar;
     
     public int adicao(int a){
        
@@ -28,19 +28,11 @@ public class Operacoes {
         
     }
     
-    public void divisao (int a, int b){
-        
+    
+    
+    public void resposta(int c){
+        auxiliar = c;
     }
     
-    public void multiplicacao (int a, int b){
-        
-    }
     
-    public void resposta(){
-        
-    }
-    
-    public void display(){
-        
-    }
 }
