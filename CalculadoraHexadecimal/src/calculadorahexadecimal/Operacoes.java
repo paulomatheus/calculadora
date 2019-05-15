@@ -11,27 +11,21 @@ package calculadorahexadecimal;
  */
 public class Operacoes{
     int auxiliar = 0;
-    //HomeScreen tela = new
     
+    //Metodo que farah a adicao
     public int adicao(int a){
-       
-        //System.out.println(operacao);
-        System.out.println("A da classe= "+ a);
         auxiliar += a;
-        System.out.println("Auxiliar da classe [+] =" +auxiliar);
         return auxiliar;   
     }
     
+    //Metodo que farah a subtracao
     public int subtracao (int b){
-        System.out.println("B da classe= "+ b);
         auxiliar = auxiliar - b;
-        System.out.println("Auxiliar da classe [-] =" +auxiliar);
         return auxiliar;
         
     }
     
-    
-    
+    //Metodo que vai armazenar o numero no inicio
     public void resposta(int c){
         auxiliar = c;
     }

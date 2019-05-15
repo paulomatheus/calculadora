@@ -44,7 +44,7 @@
               <Component id="pnVisor" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="pnBotoes" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="52" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -137,35 +137,8 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="btLetraC" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btLetraD" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btLetraE" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btLetraF" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="btOito" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btNove" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btLetraA" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btLetraB" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="btQuatro" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btCinco" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btSeis" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btSete" min="-2" max="-2" attributes="0"/>
-                      </Group>
                       <Group type="102" attributes="0">
                           <Component id="btZero" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -175,28 +148,56 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btTres" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="btQuatro" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btCinco" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btSeis" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btSete" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="btApagar" alignment="0" min="-2" pref="103" max="-2" attributes="0"/>
                       <Component id="btAdicao" alignment="1" min="-2" pref="103" max="-2" attributes="0"/>
-                      <Component id="btMultiplicacao" alignment="1" min="-2" pref="103" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                           <Component id="btApagarTudo" min="-2" pref="103" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="btSubtracao" alignment="1" min="-2" pref="103" max="-2" attributes="0"/>
-                              <Component id="btDivisao" alignment="1" min="-2" pref="103" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btSubtracao" min="-2" pref="103" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="btOito" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btNove" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btLetraA" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="btLetraC" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btLetraD" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btLetraE" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="btLetraF" min="-2" max="-2" attributes="0"/>
+                      <Component id="btLetraB" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -204,61 +205,40 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="btDois" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
-                                  <Component id="btTres" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
-                                  <Component id="btApagarTudo" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="btUm" alignment="0" max="32767" attributes="0"/>
-                              <Component id="btZero" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="btSeis" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
-                                          <Component id="btSete" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="btCinco" max="32767" attributes="0"/>
-                                      <Component id="btQuatro" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="btSubtracao" max="32767" attributes="0"/>
-                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="btDivisao" min="-2" pref="49" max="-2" attributes="0"/>
-                              <Component id="btNove" max="32767" attributes="0"/>
-                              <Component id="btOito" alignment="0" max="32767" attributes="0"/>
-                              <Component id="btLetraA" alignment="0" max="32767" attributes="0"/>
-                              <Component id="btLetraB" alignment="1" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="btApagar" min="-2" pref="49" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btAdicao" min="-2" pref="49" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btMultiplicacao" min="-2" pref="49" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btLetraE" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
-                          <Component id="btLetraF" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+                          <Component id="btDois" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+                          <Component id="btTres" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+                          <Component id="btApagarTudo" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                          <Component id="btApagar" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="btLetraD" alignment="0" max="32767" attributes="0"/>
-                      <Component id="btLetraC" alignment="0" max="32767" attributes="0"/>
+                      <Component id="btUm" alignment="0" max="32767" attributes="0"/>
+                      <Component id="btZero" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btSubtracao" alignment="0" min="-2" pref="51" max="-2" attributes="0"/>
+                      <Component id="btAdicao" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                      <Component id="btSete" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+                      <Component id="btSeis" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+                      <Component id="btCinco" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                      <Component id="btQuatro" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btOito" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                      <Component id="btNove" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                      <Component id="btLetraA" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                      <Component id="btLetraB" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btLetraF" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                      <Component id="btLetraE" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+                      <Component id="btLetraD" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                      <Component id="btLetraC" min="-2" pref="52" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="15" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -422,22 +402,6 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btSubtracaoActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="btMultiplicacao">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="*"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btMultiplicacaoActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="btDivisao">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="/"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btDivisaoActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

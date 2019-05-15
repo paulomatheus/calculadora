@@ -10,33 +10,22 @@ package calculadorahexadecimal;
  * @author paulomatheusdearaujosilva
  */
 public class Validacao  {
-    
-    int aux = 0;
+ 
+    //------Instancio para chamar metodos da outra classe
     Operacoes calcula = new Operacoes();
     
+    //Parametros com variaveis booleanas e inteiro em hexadecimal
     public int condicao (boolean inicio, boolean operacao, int numero){
+        //Caso inicio seja verdadeiro nao havera operacao de soma/subtracao
         if (inicio) {
-            System.out.println("NumHexa da condicao = " + numero +"-------------");
             calcula.resposta(numero);
-            return numero;
-            
-            //letraHexa = Integer.toHexString(numeroHexa);
-            
+            return numero;   
         } else {
-            
-            
             //Condicao para ver se a operacao eh de adicao ou subtracao
             if (operacao) {
-                System.out.println("Numero antes de calcular = "+numero);
-                
-                
-                return calcula.adicao(numero);
-                
-                
-                
+                return calcula.adicao(numero);   
             } else {
                 return calcula.subtracao(numero);
-                
             }
         }
         

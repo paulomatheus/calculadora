@@ -5,9 +5,6 @@
  */
 package calculadorahexadecimal;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.swing.JTextField;
 
 /**
  *
@@ -18,18 +15,23 @@ public class HomeScreen extends javax.swing.JFrame {
     /**
      * Creates new form HomeScreen
      */
-    
-    Operacoes opera = new Operacoes();
+    //------Instancio para chamar metodos da outra classe
     Validacao valida = new Validacao();
+    //------Declaracao de variaveis-------
+    //Variavel que recebe valor a ser exibido para o calculo
     String letraEquacao = "";
+    //Variavel que recebe valor a ser calculado
     String numeroEquacao = "";
+    //Variavel que recebe o valor com o calculo feito
     String letraHexa = "";
+    //Variavel que recebe o valor em hexadecimal
     int numeroHexa = 0;
-    int aux = 0;
+    //Booleano para definir se eh a primeiro numero digitado ou nao (TRUE - PRIMEIRO DIGITADO; FALSE - NAO EH O PRIMEIRO)
     boolean inicio = true;
+    //Booleano para definir a operacao matematica (TRUE - ADICAO; FALSE - SUBTRACAO)
     boolean operacao = false;
     
-    //List<String> letraEquacao = new ArrayList();
+  
     
     public HomeScreen() {
         System.out.println("etapa 4");
@@ -73,8 +75,6 @@ public class HomeScreen extends javax.swing.JFrame {
         btApagarTudo = new javax.swing.JButton();
         btAdicao = new javax.swing.JButton();
         btSubtracao = new javax.swing.JButton();
-        btMultiplicacao = new javax.swing.JButton();
-        btDivisao = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora Hexadecimal");
@@ -262,20 +262,6 @@ public class HomeScreen extends javax.swing.JFrame {
             }
         });
 
-        btMultiplicacao.setText("*");
-        btMultiplicacao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btMultiplicacaoActionPerformed(evt);
-            }
-        });
-
-        btDivisao.setText("/");
-        btDivisao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btDivisaoActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout pnBotoesLayout = new javax.swing.GroupLayout(pnBotoes);
         pnBotoes.setLayout(pnBotoesLayout);
         pnBotoesLayout.setHorizontalGroup(
@@ -283,21 +269,13 @@ public class HomeScreen extends javax.swing.JFrame {
             .addGroup(pnBotoesLayout.createSequentialGroup()
                 .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnBotoesLayout.createSequentialGroup()
-                        .addComponent(btLetraC)
+                        .addComponent(btZero)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btLetraD)
+                        .addComponent(btUm)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btLetraE)
+                        .addComponent(btDois)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btLetraF))
-                    .addGroup(pnBotoesLayout.createSequentialGroup()
-                        .addComponent(btOito)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btNove)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btLetraA)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btLetraB))
+                        .addComponent(btTres))
                     .addGroup(pnBotoesLayout.createSequentialGroup()
                         .addComponent(btQuatro)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -305,78 +283,72 @@ public class HomeScreen extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btSeis)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btSete))
-                    .addGroup(pnBotoesLayout.createSequentialGroup()
-                        .addComponent(btZero)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btUm)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btDois)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btTres)))
+                        .addComponent(btSete)))
                 .addGap(18, 18, 18)
                 .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btAdicao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btMultiplicacao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btAdicao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnBotoesLayout.createSequentialGroup()
                         .addGap(9, 9, 9)
-                        .addComponent(btApagarTudo, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(btApagarTudo, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnBotoesLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btSubtracao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btDivisao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btSubtracao, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(pnBotoesLayout.createSequentialGroup()
+                .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnBotoesLayout.createSequentialGroup()
+                        .addComponent(btOito)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btNove)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btLetraA))
+                    .addGroup(pnBotoesLayout.createSequentialGroup()
+                        .addComponent(btLetraC)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btLetraD)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btLetraE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btLetraF)
+                    .addComponent(btLetraB))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         pnBotoesLayout.setVerticalGroup(
             pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnBotoesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(pnBotoesLayout.createSequentialGroup()
-                        .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(btDois, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btTres, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btApagarTudo, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btUm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btZero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnBotoesLayout.createSequentialGroup()
-                                .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(btSeis, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(btSete, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(btCinco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btQuatro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addGroup(pnBotoesLayout.createSequentialGroup()
-                                .addComponent(btSubtracao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(6, 6, 6)))
-                        .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btDivisao, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btNove, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btOito, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btLetraA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btLetraB, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(pnBotoesLayout.createSequentialGroup()
-                        .addComponent(btApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btAdicao, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btMultiplicacao, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btLetraE, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btLetraF, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btLetraD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btLetraC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                        .addComponent(btDois, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btTres, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btApagarTudo, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btUm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btZero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btSubtracao, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btAdicao, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btSete, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btSeis, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btCinco, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btQuatro, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btOito, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btNove, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btLetraA, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btLetraB, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btLetraF, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btLetraE, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btLetraD, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btLetraC, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -397,47 +369,56 @@ public class HomeScreen extends javax.swing.JFrame {
                 .addComponent(pnVisor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(pnBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //-------------ACOES PARA OS BOTOES-------------------
+    
     private void btQuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btQuatroActionPerformed
+        //Variaveis que recebem o valor do botao
         letraEquacao += "4";
         numeroEquacao += "4" ;
+        //Converto a string em um numero hexadecimal
         numeroHexa = Integer.parseInt(numeroEquacao, 16);
-        System.out.println("NumHexa = "+ numeroHexa);
+        //Envio o numero hexadecimal para o metodo responsavel pela conta
         letraHexa = Integer.toHexString(valida.condicao(inicio, operacao,numeroHexa));
-        System.out.println("Resposta em hexa = " + letraHexa);
+        //Envio para as telas as respostas
         tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
-        
-        
     }//GEN-LAST:event_btQuatroActionPerformed
 
+    //------TODAS AS ACOES DO TECLADO HEXADECIMAL POSSUEM A MESMA LOGICA------------
+    
+    
     private void btLetraAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLetraAActionPerformed
         letraEquacao += "A";
         numeroEquacao += "a";
         numeroHexa = Integer.parseInt(numeroEquacao, 16);
-        System.out.println("NumHexa = "+ numeroHexa);
         letraHexa = Integer.toHexString(valida.condicao(inicio, operacao,numeroHexa));
-        System.out.println("Resposta em hexa = " + letraHexa);
         tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btLetraAActionPerformed
 
     private void btApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagarActionPerformed
         try{
+            //Removo a ultima posicao das variaveis
             letraEquacao = letraEquacao.substring(0, letraEquacao.length()-1);
-            //letraHexa = letraHexa.substring(0, letraHexa.length()-1);
-            operacao = false;
-            letraHexa = Integer.toHexString(valida.condicao(inicio, operacao,numeroHexa));
-            inicio = true;
-            System.out.println(letraEquacao);
+            numeroEquacao = numeroEquacao.substring(0, numeroEquacao.length()-1);
+            //Crio uma variavel para ser possivel apagar o ultimo valor inserido
+            boolean auxOperacao = false;
+            auxOperacao = operacao;
+            //Apaga o ultimo valor inserido
+            operacao = false;letraHexa = Integer.toHexString(valida.condicao(inicio, operacao,numeroHexa));
+            numeroHexa = Integer.parseInt(letraHexa, 16);
+            operacao = auxOperacao;
+            //Envio para as telas as respostas
             tfConta.setText(letraEquacao);
-            tfResultado.setText(letraHexa);
+            tfResultado.setText(letraEquacao);
         }catch(StringIndexOutOfBoundsException erro){
+            //Tratamento para nao subtrair a posicao 0
             System.out.println(erro);
         }
         
@@ -445,8 +426,6 @@ public class HomeScreen extends javax.swing.JFrame {
 
     private void tfContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfContaActionPerformed
        
-        
-        
     }//GEN-LAST:event_tfContaActionPerformed
 
 
@@ -454,9 +433,7 @@ public class HomeScreen extends javax.swing.JFrame {
         letraEquacao += "0";
         numeroEquacao += "0" ;
         numeroHexa = Integer.parseInt(numeroEquacao, 16);
-        System.out.println("NumHexa = "+ numeroHexa);
         letraHexa = Integer.toHexString(valida.condicao(inicio, operacao,numeroHexa));
-        System.out.println("Resposta em hexa = " + letraHexa);
         tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btZeroActionPerformed
@@ -465,9 +442,7 @@ public class HomeScreen extends javax.swing.JFrame {
         letraEquacao += "1";
         numeroEquacao += "1" ;
         numeroHexa = Integer.parseInt(numeroEquacao, 16);
-        System.out.println("NumHexa = "+ numeroHexa);
         letraHexa = Integer.toHexString(valida.condicao(inicio, operacao,numeroHexa));
-        System.out.println("Resposta em hexa = " + letraHexa);
         tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btUmActionPerformed
@@ -476,9 +451,7 @@ public class HomeScreen extends javax.swing.JFrame {
         letraEquacao += "2";
         numeroEquacao += "2" ;
         numeroHexa = Integer.parseInt(numeroEquacao, 16);
-        System.out.println("NumHexa = "+ numeroHexa);
         letraHexa = Integer.toHexString(valida.condicao(inicio, operacao,numeroHexa));
-        System.out.println("Resposta em hexa = " + letraHexa);
         tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btDoisActionPerformed
@@ -487,9 +460,7 @@ public class HomeScreen extends javax.swing.JFrame {
         letraEquacao += "3";
         numeroEquacao += "3" ;
         numeroHexa = Integer.parseInt(numeroEquacao, 16);
-        System.out.println("NumHexa = "+ numeroHexa);
         letraHexa = Integer.toHexString(valida.condicao(inicio, operacao,numeroHexa));
-        System.out.println("Resposta em hexa = " + letraHexa);
         tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
         
@@ -500,9 +471,7 @@ public class HomeScreen extends javax.swing.JFrame {
         letraEquacao += "5";
         numeroEquacao += "5" ;
         numeroHexa = Integer.parseInt(numeroEquacao, 16);
-        System.out.println("NumHexa = "+ numeroHexa);
         letraHexa = Integer.toHexString(valida.condicao(inicio, operacao,numeroHexa));
-        System.out.println("Resposta em hexa = " + letraHexa);
         tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btCincoActionPerformed
@@ -511,9 +480,7 @@ public class HomeScreen extends javax.swing.JFrame {
         letraEquacao += "6";
         numeroEquacao += "6" ;
         numeroHexa = Integer.parseInt(numeroEquacao, 16);
-        System.out.println("NumHexa = "+ numeroHexa);
         letraHexa = Integer.toHexString(valida.condicao(inicio, operacao,numeroHexa));
-        System.out.println("Resposta em hexa = " + letraHexa);
         tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btSeisActionPerformed
@@ -522,9 +489,7 @@ public class HomeScreen extends javax.swing.JFrame {
         letraEquacao += "7";
         numeroEquacao += "7" ;
         numeroHexa = Integer.parseInt(numeroEquacao, 16);
-        System.out.println("NumHexa = "+ numeroHexa);
         letraHexa = Integer.toHexString(valida.condicao(inicio, operacao,numeroHexa));
-        System.out.println("Resposta em hexa = " + letraHexa);
         tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btSeteActionPerformed
@@ -533,9 +498,7 @@ public class HomeScreen extends javax.swing.JFrame {
         letraEquacao += "8";
         numeroEquacao += "8" ;
         numeroHexa = Integer.parseInt(numeroEquacao, 16);
-        System.out.println("NumHexa = "+ numeroHexa);
         letraHexa = Integer.toHexString(valida.condicao(inicio, operacao,numeroHexa));
-        System.out.println("Resposta em hexa = " + letraHexa);
         tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btOitoActionPerformed
@@ -544,9 +507,7 @@ public class HomeScreen extends javax.swing.JFrame {
         letraEquacao += "9";
         numeroEquacao += "9" ;
         numeroHexa = Integer.parseInt(numeroEquacao, 16);
-        System.out.println("NumHexa = "+ numeroHexa);
         letraHexa = Integer.toHexString(valida.condicao(inicio, operacao,numeroHexa));
-        System.out.println("Resposta em hexa = " + letraHexa);
         tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btNoveActionPerformed
@@ -555,9 +516,7 @@ public class HomeScreen extends javax.swing.JFrame {
         letraEquacao += "b";
         numeroEquacao += "b" ;
         numeroHexa = Integer.parseInt(numeroEquacao, 16);
-        System.out.println("NumHexa = "+ numeroHexa);
         letraHexa = Integer.toHexString(valida.condicao(inicio, operacao,numeroHexa));
-        System.out.println("Resposta em hexa = " + letraHexa);
         tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btLetraBActionPerformed
@@ -566,9 +525,7 @@ public class HomeScreen extends javax.swing.JFrame {
         letraEquacao += "c";
         numeroEquacao += "c" ;
         numeroHexa = Integer.parseInt(numeroEquacao, 16);
-        System.out.println("NumHexa = "+ numeroHexa);
         letraHexa = Integer.toHexString(valida.condicao(inicio, operacao,numeroHexa));
-        System.out.println("Resposta em hexa = " + letraHexa);
         tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btLetraCActionPerformed
@@ -577,9 +534,7 @@ public class HomeScreen extends javax.swing.JFrame {
         letraEquacao += "d";
         numeroEquacao += "d" ;
         numeroHexa = Integer.parseInt(numeroEquacao, 16);
-        System.out.println("NumHexa = "+ numeroHexa);
         letraHexa = Integer.toHexString(valida.condicao(inicio, operacao,numeroHexa));
-        System.out.println("Resposta em hexa = " + letraHexa);
         tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btLetraDActionPerformed
@@ -588,9 +543,7 @@ public class HomeScreen extends javax.swing.JFrame {
         letraEquacao += "e";
         numeroEquacao += "e" ;
         numeroHexa = Integer.parseInt(numeroEquacao, 16);
-        System.out.println("NumHexa = "+ numeroHexa);
         letraHexa = Integer.toHexString(valida.condicao(inicio, operacao,numeroHexa));
-        System.out.println("Resposta em hexa = " + letraHexa);
         tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btLetraEActionPerformed
@@ -599,14 +552,13 @@ public class HomeScreen extends javax.swing.JFrame {
         letraEquacao += "f";
         numeroEquacao += "f" ;
         numeroHexa = Integer.parseInt(numeroEquacao, 16);
-        System.out.println("NumHexa = "+ numeroHexa);
         letraHexa = Integer.toHexString(valida.condicao(inicio, operacao,numeroHexa));
-        System.out.println("Resposta em hexa = " + letraHexa);
         tfConta.setText(letraEquacao);
         tfResultado.setText(letraHexa);
     }//GEN-LAST:event_btLetraFActionPerformed
 
     private void btApagarTudoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagarTudoActionPerformed
+        //Reinicio todas as variaveis para a condicao de inicio
         inicio = true;
         operacao = true;
         numeroEquacao = "0";
@@ -619,12 +571,12 @@ public class HomeScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_btApagarTudoActionPerformed
 
     private void btAdicaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAdicaoActionPerformed
+        
         inicio = false;
         operacao = true;
+        //Faco a variavel valer 0 para o proximo numero ser adicionado corretamente
         numeroEquacao = "0";
-        System.out.println("-----------" +operacao+ "----------------");
-        String mais = "+";
-        letraEquacao += mais;
+        letraEquacao += "+";
         tfConta.setText(letraEquacao);
         
     }//GEN-LAST:event_btAdicaoActionPerformed
@@ -632,24 +584,11 @@ public class HomeScreen extends javax.swing.JFrame {
     private void btSubtracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSubtracaoActionPerformed
         inicio = false;
         operacao = false;
+        //Faco a variavel valer 0 para o proximo numero ser adicionado corretamente
         numeroEquacao = "0";
-        System.out.println("-----------" +operacao+ "----------------");
-        String menos = "-";
-        letraEquacao += menos;
+        letraEquacao += "-";
         tfConta.setText(letraEquacao);
     }//GEN-LAST:event_btSubtracaoActionPerformed
-
-    private void btMultiplicacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMultiplicacaoActionPerformed
-        String multiplicacao = "*";
-        letraEquacao += multiplicacao;
-        tfConta.setText(letraEquacao);
-    }//GEN-LAST:event_btMultiplicacaoActionPerformed
-
-    private void btDivisaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDivisaoActionPerformed
-        String divisao = "/";
-        letraEquacao += divisao;
-        tfConta.setText(letraEquacao);
-    }//GEN-LAST:event_btDivisaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -692,7 +631,6 @@ public class HomeScreen extends javax.swing.JFrame {
     private javax.swing.JButton btApagar;
     private javax.swing.JButton btApagarTudo;
     private javax.swing.JButton btCinco;
-    private javax.swing.JButton btDivisao;
     private javax.swing.JButton btDois;
     private javax.swing.JButton btLetraA;
     private javax.swing.JButton btLetraB;
@@ -700,7 +638,6 @@ public class HomeScreen extends javax.swing.JFrame {
     private javax.swing.JButton btLetraD;
     private javax.swing.JButton btLetraE;
     private javax.swing.JButton btLetraF;
-    private javax.swing.JButton btMultiplicacao;
     private javax.swing.JButton btNove;
     private javax.swing.JButton btOito;
     private javax.swing.JButton btQuatro;
