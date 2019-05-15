@@ -10,10 +10,12 @@ package calculadorahexadecimal;
  * @author paulomatheusdearaujosilva
  */
 public class Operacoes{
-    int auxiliar;
+    int auxiliar = 0;
+    //HomeScreen tela = new
     
     public int adicao(int a){
        
+        //System.out.println(operacao);
         System.out.println("A da classe= "+ a);
         auxiliar += a;
         System.out.println("Auxiliar da classe [+] =" +auxiliar);

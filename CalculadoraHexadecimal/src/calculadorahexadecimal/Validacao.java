@@ -16,7 +16,7 @@ public class Validacao  {
     
     public int condicao (boolean inicio, boolean operacao, int numero){
         if (inicio) {
-            System.out.println("NumHexa da condicao = " + numero);
+            System.out.println("NumHexa da condicao = " + numero +"-------------");
             calcula.resposta(numero);
             return numero;
             
